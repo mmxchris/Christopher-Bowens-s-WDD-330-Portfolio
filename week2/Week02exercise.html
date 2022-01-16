@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <h1>Christopher Bowen's WDD 330 Portfolio</h1>
+    <h2>Week 02 Exercise</h2>
+    <h3>Function countBs(string)</h3>
+    <p>This function counts the numbers of Bs in a string. It use the function countChars.</p>
+    <p>String to count "BBC".</p>
+    <p>Results:</p>
+    <dev id="countBs"></dev>
+    <h3>Function countChars(string, ch)</h3>
+    <p>This function take a string and a character as parameters. It will count the number of character in the string</p>
+    <p>String = "kakkerlak" Character = "k"</p>
+    <p>Results:</p>
+    <dev id ="countChar"></dev>
+        
+    <div class="dropup">
+        <button class="dropbtn">Menu</button>
+        <div class="dropup-content">
+          <p id="menuContent"></p>
+        </div>
+      </div>
+      <script src = "../js/popUpMenu.js"></script>
+      <script>
+      function countChar(string, ch)
+      {
+        let counted = 0;
+        for (let i = 0; i <string.length; i++)
+        {
+          if (string[i] == ch)
+          counted += 1;
+        }
+        return  document.getElementById("countChar").innerHTML = counted;
+      }
+
+      function countBs(string)
+      {
+          return document.getElementById("countBs").innerHTML = countChar(string, "B");
+      }
+
+      console.log(countBs("BBC"));
+      console.log(countChar("kakkerlak","k"));
+
+      </script>
+    </body>
+  </html>
+    </body>
+  </html>
