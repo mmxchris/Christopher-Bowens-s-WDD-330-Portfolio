@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <h1>Christopher Bowen's WDD 330 Portfolio</h1>
+    <h2>Week 03 Exercise</h2>
+    <h3>Increase/Decrease Balloon Size</h3>
+    <p>Clicking on the balloon with the left mouse button will increase its size.</p>
+    <p>What will happen if the balloon gets too big?</p>
+    <p>Cilcking on the balloon with the middle mouse button will decrease its size.</p>
+    <div  onmousedown="mouseButton(event)">
+    <p id="balloon">🎈</p>   
+    </div>    
+    </body>
+    <div class="dropup">
+        <button class="dropbtn">Menu</button>
+        <div class="dropup-content">
+          <p id="menuContent"></p>
+        </div>
+      </div>
+      <script src = "../js/popUpMenu.js"></script>
+      <script>
+          let p = document.getElementById("balloon");
+          let size;
+          
+          //set the font size of an element with the id of "balloon"
+          function setSize(newSize)
+          {
+              size = newSize;
+              p.style.fontSize = size + "px";
+              console.log(p.style.fontSize);
+          }
+          setSize(20);
+          //handle the mouse button       
+         function mouseButton(event)
+         {
+             switch(event.button)
+             {
+                 //left mouse button is clicked
+                 case 0:
+                 //size is too big
+                 if (size > 70)
+                 {
+                     alert("POP!!!");
+                     p.textContent= "💥";                 
+                 }
+                 //size is not to big
+                 else
+                 {
+                     setSize(size * 1.1);                    
+                 }
+                 break;
+                 //middle mouse botton is clicked
+                 case 1:
+                 {
+                     setSize(size * 0.9);                
+                 }
+                 default:
+                     console.log("Not valid mouse button!");                               
+             }
+        }         
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,140 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Christopher Bowen's WDD 330 Portfolio</h1>
+    <h2>Week 04 Exercise</h2>
+    <h3>Fourms</h3>
+    <form id="myForm">
+        <lable for="first_name">First Name</lable>
+        <input type="text" name="first_name" id="first_name" value oninput="validate_first(this.value)">
+        <p id="first_name_message" style="color: c7c7c7;">Please enter your first name.</p>
+
+        <lable for="last_name">Last Name</lable>
+        <input type="text" name="last_name" id="last_name" value oninput="validate_last(this.value)">
+        <p id="last_name_message" style="color: c7c7c7;">Please enter your last name.</p>
+
+        <lable for="phone_number">Phone Number</lable>
+        <input type="text" name="phone_number" id="phone_number" value oninput="validate_phone(this.value)">
+        <p id="phone_number_message" style="color: c7c7c7;">Please enter your phone number. Example:123-123-1234</p>
+        <input type="button" onclick="resetForm()" value="Reset">
+        <input type="button" onclick="validateForm()" value="Submit">  
+        </form>
+
+        <table id="myTable">
+            <tr>
+                <th>First Name</th>
+                <th>Last name</th>
+                <th>Phone Number</th>
+            </tr>
+        </table>
+    <div class="dropup">
+        <button class="dropbtn">Menu</button>
+        <div class="dropup-content">
+          <p id="menuContent"></p>
+        </div>
+      </div>
+      <script src = "../js/popUpMenu.js"></script>
+      <script>    
+
+          //this function is used to validate the input of first_name.
+          //if input is worng help message will turn red
+          function validate_first(value)
+          {
+              if(value == " " || value == "")
+              {
+                document.getElementById("first_name_message").style="color:red;";
+                return 0;                 
+              }
+              else
+              {
+                document.getElementById("first_name_message").style="color: c7c7c7;";
+                return 1;
+              }
+          }
+           //this function is used to validate the input of last_name.
+          //if input is worng help message will turn red
+          function validate_last(value)
+          {
+              console.log(value);
+              if(value == " " || value == "")
+              {
+                document.getElementById("last_name_message").style="color:red; visibility: visible;";
+                return 0;                 
+              }
+              else
+              {
+                document.getElementById("last_name_message").style="color: c7c7c7;";
+                return 1;
+              }
+          }
+
+          //function to validate phone number
+          //if input is wrong help message will turn red
+          function validate_phone(value)
+          {
+              let validate = /\d{3}-\d{3}-\d{4}/;
+              if(validate.test(value))
+              {
+                document.getElementById("phone_number_message").style="color: c7c7c7;";
+                return 1;
+              }
+              else
+              {
+                document.getElementById("phone_number_message").style="color: red;";
+                return 0;
+              }
+          }
+          function resetForm()
+          {
+              document.getElementById("myForm").reset();
+          }
+
+          //validate the form before submitting
+          function validateForm()
+          {
+              console.log(document.getElementById("first_name").value);
+              let first_name_valid = validate_first(document.getElementById("first_name").value);
+              let last_name_valid = validate_last(document.getElementById("last_name").value);
+              let phone_number_valid = validate_phone(document.getElementById("phone_number").value);
+              let total = first_name_valid + last_name_valid + phone_number_valid;
+              console.log(total); 
+              
+              if (total == 3 )
+              {
+                  submit();
+              }
+          }
+
+
+          function submit()
+          {
+              let table = document.getElementById("myTable");
+              let row = table.insertRow(1);
+              let first_name = row.insertCell(0);
+              let last_name = row.insertCell(1);
+              let phone_number = row.insertCell(2);
+
+              first_name.innerHTML = document.getElementById("first_name").value;
+              last_name.innerHTML = document.getElementById("last_name").value;
+              phone_number.innerHTML = document.getElementById("phone_number").value;
+          }
+         
+      </script>
+    </body>
+  </html>

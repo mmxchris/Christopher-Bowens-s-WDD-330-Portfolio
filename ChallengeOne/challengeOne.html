@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>      
+  </style>
+  
+  </head>
+  <body onload="onLoadShowList()">
+    <h1>Christopher Bowen's WDD 330 portfolio</h1>
+    <h2>Challenge One: Todo</h2>
+    <div class="flex-container">
+      <div class="box">
+        <table id="todoList">
+          <tr>
+            <th class="title" colspan="4">ToDos</td>
+          </tr>
+         
+          <tr class="taskListBottom" id="taskListBottom">
+            <td id="tasksLeft">Tasks left</td>
+            <td id="viewAll" class="viewActive"  onclick="activeView(this.id)">All</td>
+            <td id="viewActive" class="view"  onclick="activeView(this.id)">Active</td>
+            <td id="viewCompleted" class="view"  onclick="activeView(this.id)">Completed</td>
+          </tr>
+        </table>
+      </div>
+      <div class="box">
+        <input type="text" name="addtask" id="addtask">
+        <button type="button" onclick="onClickAddTask(this.id)">Add Task</button>
+      </div>
+    </div>
+    <br>
+    <div class="dropup">
+      <button class="dropbtn">Menu</button>
+      <div class="dropup-content">
+        <p id="menuContent"></p>
+      </div>
+    </div>    
+    <script src = "../js/popUpMenu.js"></script>        
+    <script src="main.js" type="module"></script>    
+    
+  </body>
+</html>
