@@ -2,13 +2,14 @@ import { loadLSTodoList } from "./ls.js";
 import { addTask, showAll,  setCompleteStatus, removeTodo, showActiveTasks, showCompletedTasks, loadTodoList } from "./todo.js";
 import { resetTable } from "./utilities.js";
 
+//add a task
 function onClickAddTask()
 {
     addTask();
-    //loadTodoList();
 }
 window.onClickAddTask=onClickAddTask;
 
+//rendres the todo list on load
 function onLoadShowList()
 {
     loadTodoList();
@@ -16,14 +17,14 @@ function onLoadShowList()
 }
 window.onLoadShowList=onLoadShowList;
 
+//marks a todo complete status
 function onClickMarkComplete(todoID)
 {
-    setCompleteStatus(todoID);
-    //markComplete(todoID);
-    
+    setCompleteStatus(todoID);   
 }
 window.onClickMarkComplete=onClickMarkComplete;
 
+//removes a todo
 function onClickRemove(todo)
 {
     let rowIndex = todo.parentNode.parentNode.rowIndex;
@@ -31,6 +32,7 @@ function onClickRemove(todo)
 }
 window.onClickRemove=onClickRemove;
 
+//renders the view based on the button clicked
 function activeView(id)
 {
     resetView();

@@ -23,6 +23,21 @@ const links =[
     },{
         label: "Week 6: Challenge One-Todo",
         url: "ChallengeOne/challengeOne.html"
+    },{
+        label: "Week 7 Notes",
+        url: "week7/index.html"
+    },{
+        label: "Week 8 Notes",
+        url: "week8/index.html"
+    },{
+        label: "Week 9 Notes",
+        url: "week9/index.html"
+    },{
+        label: "Week 10 Notes",
+        url: "week10/index.html"
+    },{
+        label: "Challenge Two - Weather App",
+        url: "weatherApp/weatherAPP.html"
     }
     ]
     

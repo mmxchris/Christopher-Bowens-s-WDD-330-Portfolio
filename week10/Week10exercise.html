@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <style>
+        input:invalid {
+        border: red solid 3px    
+        }
+    </style>    
+  </head>
+
+  <body>
+    <h1>Christopher Bowen's WDD 330 Portfolio</h1>
+    <h2>Week 10 Exercise</h2>
+    <h3>Fourm Controls</h3>
+    <form id="myForm">
+        <lable for="first_name">First Name</lable>
+        <input type="text" name="first_name" id="first_name" required="required" pattern="[a-zA-Z">
+        <p id="first_name_message" style="color: c7c7c7;" required="required">Please enter your first name.</p>
+
+        <lable for="last_name">Last Name</lable>
+        <input type="text" name="last_name" id="last_name" required="required" pattern="[a-zA-Z">
+        <p id="last_name_message" style="color: c7c7c7;">Please enter your last name.</p>
+
+        <lable for="phone_number">Phone Number</lable>
+        <input type="tel" name="phone_number" id="phone_number" required="required" pattern="\d{3}-\d{3}-\d{4}">
+        <p id="phone_number_message" style="color: c7c7c7;">Please enter your phone number. Example:123-123-1234</p>
+
+    </form>
+
+    <div class="dropup">
+      <button class="dropbtn">Menu</button>
+      <div class="dropup-content">
+        <p id="menuContent"></p>
+      </div>
+    </div>
+    <script src = "../js/popUpMenu.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,97 @@
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WDD 330 portfolio</title>
+    <link rel="stylesheet" href="../styles/styles.css" />   
+  </head>
+  <body>
+    <h1>Christopher Bowen's WDD 330 Portfolio</h1>
+    <h2>Week 07 Exercise</h2>
+    <div id="exercise">
+    <h3>Functinal Programming</h3>
+    <p>A major part of is Functional Programming is the use of pure function. A pure function has three rules:</p>
+    
+        <li>The return value only depends on the values provided.</li>
+        <li>It does not change values or data outside the function.</li>
+        <li>Referential transparency - when given the same arguments it will return the same results.</li>
+    
+    <p>To follow these rules a function must have at least one argument and return a value.</p>
+    <P>Examples:</P>
+    <P>Function reverseMessage(myMessage)</P>
+    <p>Before:</p>
+    <p id="messageInput"></p>
+    <p>Function's return:</p>
+    <p id="messageAfter"></p>
+    <p>Check to see if the message changed:</p>
+    <p id="messageCheck"></p>
+
+    <P>Function: impureADD(intA)</P>
+    <p>Before:</p>
+    <p id="addImpure"></p>
+    <p>Function's return:</p>
+    <p id="addImpureFrunction"></p>
+    <p>Check to see if the numbers have changed changed:</p>
+    <p id="afterAddImpure"></p>
+    <P>This function violates 2 of the rules of a pure function.</P>
+    <p>It has to return and it changes data out side the function.</p>
+    
+    <P>Function pureAdd(intC, intADD)</P>
+    <p>Before:</p>
+    <p id="addPure"></p>
+    <p>Function's return:</p>
+    <p id="addPureFrunction"></p>
+    <p>Check to see if the numbers have changed changed:</p>
+    <p id="afterAddPure"></p>    
+  
+    <br>
+    <br>   
+        <div class="dropup">
+        <button class="dropbtn">Menu</button>
+        <div class="dropup-content">
+          <p id="menuContent"></p>
+        </div>
+      </div>
+      <script src = "../js/popUpMenu.js"></script>
+      <script>
+          let myMessage = "Hello Everyone!!!";
+          let a = 10;
+          let resultImpure = 0;
+          let b = 8;
+          let resultPure = 0;
+
+          function reverseMessage(message)
+          {
+            return message.split("").reverse().join("");
+          }
+
+          function imPureAdd(intA)
+          {
+            resultImpure = a + intA;
+          }
+
+          function pureAdd(intB, intADD)
+          {
+            return intB + intADD;
+          }
+        
+          function onLoad()
+          {
+            document.getElementById("messageInput").innerHTML = myMessage;
+            document.getElementById("messageAfter").innerHTML = reverseMessage(myMessage);
+            document.getElementById("messageCheck").innerHTML = myMessage;
+
+            document.getElementById("addImpure").innerHTML = "a = " + a + " result = " + resultImpure;
+            document.getElementById("addImpureFrunction").innerHTML = imPureAdd(42);
+            imPureAdd(42);
+            document.getElementById("afterAddImpure").innerHTML = "a = " + a + " result = " + resultImpure;
+
+            document.getElementById("addPure").innerHTML = "b = " + b + " result = " + resultPure;
+            document.getElementById("addPureFrunction").innerHTML = pureAdd(b, 38);
+            pureAdd(42);
+            document.getElementById("afterAddPure").innerHTML = "b = " + b + " result = " + resultPure;
+
+          }
+          window.addEventListener('load', () => {onLoad();});
+      </script>
+    </body>
+  </html>
