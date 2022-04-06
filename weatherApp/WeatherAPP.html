@@ -9,6 +9,8 @@
   
   <body onload="onLoadShowHistory()">
   <div id="header">
+    <h1>Weather App</h1>
+    <p>Enter a zipcode to get the weather. Or click on a recent location.</p>
    <span>
    <input id="zipcode" value="32780">
    <button id="submit">Submit</button>   
@@ -18,13 +20,15 @@
   </div>
    <div id ='currentWeather' style="display: none"></div>
    <div id ='forecastWeather' style="display: none"></div>
-   <script src="main.js" type="module"></script>
+   <br>
+   <br>
    <div id="dropup" class="dropup">
     <button class="dropbtn">Menu</button>
     <div class="dropup-content">
       <p id="menuContent"></p>
     </div>
   </div>
+  <script src="main.js" type="module"></script>
   <script src = "../js/popUpMenu.js"></script>
   </body>
 </html>
