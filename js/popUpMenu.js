@@ -37,7 +37,7 @@ const links =[
         url: "week10/index.html"
     },{
         label: "Challenge Two - Weather App",
-        url: "weatherApp/index.html"
+        url: "weather/weather.html"
     }
     ]
     
